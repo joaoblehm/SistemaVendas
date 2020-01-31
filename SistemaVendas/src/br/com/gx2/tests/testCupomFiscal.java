@@ -4,6 +4,8 @@ import static org.hamcrest.CoreMatchers.is;
 
 import java.util.Date;
 
+import org.junit.Test;
+
 import br.com.gx2.entity.Cliente;
 import br.com.gx2.entity.CupomFiscal;
 import br.com.gx2.entity.Loja;
@@ -21,16 +23,18 @@ public class testCupomFiscal {
 	private ClienteService cService = ServiceFactory.createClienteService();
 	private VendedorService vService = ServiceFactory.createVendedorService();
 	
-	
+	@Test
 	public void CadastroCupomFiscalTest() {
 		
 	Loja loja = lService.pesquisarLojaId(3);
 	Cliente cliente = cService.pesquisarClienteId(243);
 	Vendedor vendedor = vService.pesquisarVendedorId(1);
 	
-	CupomFiscal cupom = new CupomFiscal();	
+	Date data = new Date();
 	
-    cupom = new CupomFiscal(null,1500,new Date(),loja,cliente,vendedor);	
+	CupomFiscal cupom = cfService.cadastrarCupomFiscal (null,1500,data,loja,cliente,vendedor);  	
+	
+  	
 	
     
 	}
