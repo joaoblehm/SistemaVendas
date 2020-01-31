@@ -55,6 +55,7 @@ public class LojaServiceImp implements LojaService{
 			Loja = new Loja();
 			LojaDAO dao = DAOFactory.createLojaDAO();
 			Loja = dao.findById(obj);
+		
 		}
 
 		return Loja;

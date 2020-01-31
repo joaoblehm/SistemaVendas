@@ -1,14 +1,20 @@
 package br.com.gx2.tests;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Date;
+import java.util.List;
 
 import org.junit.Test;
 
 import br.com.gx2.entity.Cliente;
 import br.com.gx2.entity.CupomFiscal;
+
 import br.com.gx2.entity.Loja;
+
 import br.com.gx2.entity.Vendedor;
 import br.com.gx2.service.ClienteService;
 import br.com.gx2.service.CupomFiscalService;
@@ -25,18 +31,77 @@ public class testCupomFiscal {
 	
 	@Test
 	public void CadastroCupomFiscalTest() {
+	
+		 //Loja: 1,3,4
+		 //Clientes: 243,258,259,260,262,263,264,265,266,267
+		//vendedores: 1,2,3,4,5,6,7,8,9
 		
 	Loja loja = lService.pesquisarLojaId(3);
-	Cliente cliente = cService.pesquisarClienteId(243);
-	Vendedor vendedor = vService.pesquisarVendedorId(1);
+	Cliente cliente  = cService.pesquisarClienteId(243);
+	Vendedor vendedor = vService.pesquisarVendedorId(3);
+
+	CupomFiscal cupom = new CupomFiscal(null, 10.00, new Date(),loja,cliente,vendedor);
+
+	boolean retorno = cfService.cadastrarCupomFiscal(cupom);
+	assertTrue(retorno);
 	
-	Date data = new Date();
-	
-	CupomFiscal cupom = cfService.cadastrarCupomFiscal (null,1500,data,loja,cliente,vendedor);  	
-	
-  	
+
 	
     
 	}
+	
+	@Test
+	
+	public void AlterarCupomFiscalTest() {
+		
+		Loja loja = lService.pesquisarLojaId(4);
+		Cliente cliente  = cService.pesquisarClienteId(265);
+		Vendedor vendedor = vService.pesquisarVendedorId(6); 
+
+		CupomFiscal cupom = new CupomFiscal(2, 25.00, new Date(),loja,cliente,vendedor);
+
+		boolean retorno = cfService.alterarCupomFiscal(cupom);
+		assertTrue(retorno);
+		
+	}
+	
+	
+	@Test
+	
+	public void ApagarCupomFiscalTest() {
+		
+	 boolean retorno = cfService.apagarCupomFiscal(6);	
+		
+		assertNull(cfService.pesquisarCupomFiscalId(6));
+		assertTrue(retorno);
+		
+		
+	}
+	
+	@Test
+	
+	public void PesquisarCupomFiscalTest() {
+		
+		
+		CupomFiscal cupom = cfService.pesquisarCupomFiscalId(9);
+		
+		
+		assertThat(cfService.pesquisarCupomFiscalId(9), is(cupom));
+		
+		
+		
+	}
+	
+	@Test
+	
+	public void ExibirTodosCupomFiscalTest() {
+		
+		List<CupomFiscal> listaF = cfService.exibirTodosCuponsFiscais();
+		assertThat(cfService.exibirTodosCuponsFiscais(), is(listaF));	
+		
+		
+	}
+	
+	
 
 }

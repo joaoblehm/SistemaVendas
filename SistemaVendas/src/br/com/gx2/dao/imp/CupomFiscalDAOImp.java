@@ -1,6 +1,7 @@
 package br.com.gx2.dao.imp;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -31,11 +32,12 @@ public class CupomFiscalDAOImp implements CupomFiscalDAO {
 			st = conn.prepareStatement(sql);
 			
 			st.setDouble(1, cupomFiscal.getValorTotal());
-			st.setDate(2, null);
+			st.setDate(2, new java.sql.Date(cupomFiscal.getEmissao().getTime()));
 			st.setInt(3, cupomFiscal.getLoja().getCodigoLoja());
 			st.setInt(4, cupomFiscal.getCliente().getCodigoCliente());
 			st.setInt(5, cupomFiscal.getVendedor().getCodigoVendedor());
 			st.executeUpdate();
+			
 
 		} catch (SQLException e) {
 			throw new DbException(e.getMessage());

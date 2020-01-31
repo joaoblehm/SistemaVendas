@@ -36,7 +36,7 @@ public class testCliente {
 	@Test
 	public void AlterarClienteTest() {
 		
-		Cliente cliente  = new Cliente(260,"Tom Jobin", "2323232323");
+		Cliente cliente  = new Cliente(260,"Tom ", "2323232323");
 		
 		boolean retorno = service.alterarCliente(cliente);
 		assertTrue(retorno);

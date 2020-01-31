@@ -15,6 +15,8 @@ public class CupomFiscalServiceImp implements CupomFiscalService{
 		if (obj != null) {
 			CupomFiscalDAO dao = DAOFactory.createCupomFiscalDAO();
 			dao.insert(obj);
+			
+			retorno = true;
 		}
 
 		return retorno;
@@ -26,6 +28,8 @@ public class CupomFiscalServiceImp implements CupomFiscalService{
 
 			CupomFiscalDAO dao = DAOFactory.createCupomFiscalDAO();
 			dao.update(obj);
+			
+			retorno = true;
 		}
 
 		return retorno;
@@ -37,6 +41,8 @@ public class CupomFiscalServiceImp implements CupomFiscalService{
 
 			CupomFiscalDAO dao = DAOFactory.createCupomFiscalDAO();
 			dao.deleteById(obj);
+			
+			retorno = true;
 			
 		}
 
