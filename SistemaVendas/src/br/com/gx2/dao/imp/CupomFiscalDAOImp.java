@@ -27,7 +27,7 @@ public class CupomFiscalDAOImp implements CupomFiscalDAO {
 	public void insert(CupomFiscal cupomFiscal) {
 		PreparedStatement st = null;
 		try {
-			String sql = "insert into cupom_fiscal (valor_total, emissao, codigo_loja, codigo_cliente, codigo_vendedor) " + "values " + "(?,?,?,?,?)";
+			String sql = "insert into cupons_fiscais (valor_total, emissao, codigo_loja, codigo_cliente, codigo_vendedor) " + "values " + "(?,?,?,?,?)";
 			st = conn.prepareStatement(sql);
 			
 			st.setDouble(1, cupomFiscal.getValorTotal());
