@@ -23,7 +23,9 @@ private LojaService lojaService = ServiceFactory.createLojaService();
 @Test
 public void CadastroLojaTest() {
 	
-		Loja loja = new Loja (null,"Americanas");
+		int codigoLoja = 1;
+		String descricaoLoja = "Americanas";
+		Loja loja = new Loja (codigoLoja,descricaoLoja);
 		
 		assertTrue(lojaService.cadastrarLoja(loja));
 	
@@ -37,7 +39,10 @@ public void CadastroLojaTest() {
 
 public void AlterarLojaTest() {
 	
-	Loja loja  = new Loja (1,"Tumeleiro");
+	int codigoLoja =2;
+	String descricaoLoja = "São João";
+	
+	Loja loja  = new Loja (codigoLoja,descricaoLoja);
 	
 	boolean retorno = lojaService.alterarLoja(loja);
 	assertTrue(retorno);

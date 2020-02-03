@@ -21,7 +21,10 @@ private GrupoService service = ServiceFactory.createGrupoService();
 @Test
 public void CadastroGrupoTest() {
 	
-	Grupo grupo = new Grupo(null,"Eletronicos");
+	int codigoGrupo = 1;
+	String descricaoGrupo = "Smartphones";
+	
+	Grupo grupo = new Grupo(codigoGrupo, descricaoGrupo);
 	
 	//assertTrue(service.cadastrarGrupo(grupo));
 	//boolean retorno = service.cadastrarGrupo(grupo);
@@ -32,7 +35,11 @@ public void CadastroGrupoTest() {
 @Test
 public void AlterarGrupoTest() {
 	
-	Grupo grupo = new Grupo(10,"Móveis");
+	int codigoGrupo = 3;
+	String descricaoGrupo = "Smartphones";
+	
+	
+	Grupo grupo = new Grupo(codigoGrupo,descricaoGrupo);
 	
 	boolean retorno = service.alterarGrupo(grupo);
 	assertTrue(retorno);
@@ -65,4 +72,3 @@ public void ExibirTodosGruposTest() {
 	
 }
 }
-

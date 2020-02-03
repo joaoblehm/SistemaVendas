@@ -22,9 +22,13 @@ public class TestCliente {
 	@Test
 	public void  CadastroClienteTest() {
 		
-		Cliente cliente = new Cliente(null,"Xena Furiosa","22282323244741");
+		int codigoCliente = 12;
+		String nomeCliente = "Malvadeza";
+		String cpf ="1246646464";
+		
+		Cliente c1 = new Cliente(codigoCliente,nomeCliente,cpf);
   		
-		assertTrue(service.cadastrarCliente(cliente));
+		assertTrue(service.cadastrarCliente(c1));
 		
   		//boolean retorno = service.cadastrarCliente(cliente);
   		//assertTrue(retorno);
@@ -36,9 +40,13 @@ public class TestCliente {
 	@Test
 	public void AlterarClienteTest() {
 		
-		Cliente cliente  = new Cliente(260,"Tom ", "2323232323");
+		int codigoCliente = 13;
+		String nomeCliente = "Malvadeza";
+		String cpf ="1246646464";
 		
-		boolean retorno = service.alterarCliente(cliente);
+		Cliente c1 = new Cliente(codigoCliente,nomeCliente,cpf);
+		
+		boolean retorno = service.alterarCliente(c1);
 		assertTrue(retorno);
 		
 		

@@ -27,8 +27,11 @@ public class TestProduto {
 	public void CadastrarProdutoTest() {
 		
 		Grupo grupo = gService.pesquisarGrupoId(9);
+		int codigoProduto = 1;
+		String ncm = "4554444";
+		String descricaoProduto = "Airfry";
 		
-		Produto produto = new Produto(null,"15245658","Airfry", grupo);
+		Produto produto = new Produto(codigoProduto,ncm,descricaoProduto, grupo);
 		
 		//boolean retorno = pService.cadastrarProduto(produto);
 		
@@ -41,10 +44,13 @@ public class TestProduto {
 @Test
 
 public void AlterarProdutoTest() {
+	int codigoProduto = 3;
+	String ncm = "4554445";
+	String descricaoProduto = "Nova Airfry";
 	
 	Grupo grupo = gService.pesquisarGrupoId(9);
 	
-	Produto produto = new Produto(2,"848488","Batedeira", grupo);
+	Produto produto = new Produto(codigoProduto,ncm,descricaoProduto, grupo);
 	
 	boolean retorno = pService.alterarProduto(produto);
 	assertTrue(retorno);

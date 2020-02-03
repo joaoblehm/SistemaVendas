@@ -21,8 +21,11 @@ public class TestVendedor {
 	@Test
 	public void CadastrarVendedorTest() {
 		
+		int codigoVendedor =1;
+		String matricula ="44545454545n";
+		String nomeVendedor = "GodoJava";
 		
-		Vendedor vendedor = new Vendedor(null,"m1515611","Godofredo de Java");
+		Vendedor vendedor = new Vendedor(codigoVendedor,matricula,nomeVendedor);
 		
   		boolean retorno = vServices.cadastrarVendedor(vendedor);
   		assertTrue(retorno);
@@ -33,8 +36,11 @@ public class TestVendedor {
 	
 	public void AlterarVendedorTest() {
 			
-		Vendedor vendedor = new Vendedor(1,"m1555611","Godofredo da Ilha de Java");
-
+		int codigoVendedor =2;
+		String matricula ="445545454545n";
+		String nomeVendedor = "GordoJava";
+		
+		Vendedor vendedor = new Vendedor(codigoVendedor,matricula,nomeVendedor);
 		
 		boolean retorno = vServices.alterarVendedor(vendedor);
 		assertTrue(retorno);
