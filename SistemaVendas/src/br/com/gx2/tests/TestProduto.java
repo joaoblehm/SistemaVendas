@@ -17,7 +17,7 @@ import br.com.gx2.service.ProdutoService;
 import br.com.gx2.service.ServiceFactory;
 
 
-public class testProduto {
+public class TestProduto {
 	
 	private ProdutoService pService = ServiceFactory.createProdutoService();
 	

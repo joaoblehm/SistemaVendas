@@ -14,7 +14,7 @@ import br.com.gx2.entity.Grupo;
 import br.com.gx2.service.GrupoService;
 import br.com.gx2.service.ServiceFactory;
 
-public class testGrupo {
+public class TestGrupo {
 	
 private GrupoService service = ServiceFactory.createGrupoService();
 

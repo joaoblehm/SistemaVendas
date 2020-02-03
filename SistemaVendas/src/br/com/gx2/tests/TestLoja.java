@@ -14,7 +14,7 @@ import br.com.gx2.entity.Loja;
 import br.com.gx2.service.LojaService;
 import br.com.gx2.service.ServiceFactory;
 
-public class testLoja {
+public class TestLoja {
 
 	
 private LojaService lojaService = ServiceFactory.createLojaService();

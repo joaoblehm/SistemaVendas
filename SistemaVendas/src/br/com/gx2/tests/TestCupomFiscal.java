@@ -22,7 +22,7 @@ import br.com.gx2.service.LojaService;
 import br.com.gx2.service.ServiceFactory;
 import br.com.gx2.service.VendedorService;
 
-public class testCupomFiscal {
+public class TestCupomFiscal {
 	
 	private CupomFiscalService cfService = ServiceFactory.createCupomFiscalService();
 	private LojaService lService = ServiceFactory.createLojaService();
